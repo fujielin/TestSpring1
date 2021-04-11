@@ -1,19 +1,22 @@
 package com.yc.bean;
 
-import com.yc.springframework.stereotype.MyPostConstruct;
-import com.yc.springframework.stereotype.MyPreDestroy;
 
-///@MyComponent
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component
 public class HelloWorld {
 
-    @MyPostConstruct
+    @PostConstruct
     public void setup() {
-        System.out.println("MyPostConstruct");
+        System.out.println("PostConstruct");
     }
 
-    @MyPreDestroy
+    @PreDestroy
     public void destroy() {
-        System.out.println("MyPreDestroy");
+        System.out.println("PreDestroy");
     }
 
     public HelloWorld() {

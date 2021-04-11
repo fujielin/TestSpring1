@@ -12,6 +12,9 @@
         <module>spring1_helloworld</module>
         <module>spring2_caltools</module>
         <module>spring3_myspringframework</module>
+        <module>Spring4_AOP</module>
+        <module>Spring5_self_jdkproxy</module>
+        <module>Spring6_selfaop_chlibproxy</module>
     </modules>
 
     <properties>
@@ -42,6 +45,12 @@
             <version>4.12</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -69,8 +78,11 @@
                 <artifactId>javax.inject</artifactId>
                 <version>1</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+
 
 
 </project>

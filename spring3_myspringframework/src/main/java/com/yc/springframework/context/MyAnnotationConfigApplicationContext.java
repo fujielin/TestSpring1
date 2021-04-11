@@ -14,6 +14,7 @@ import java.util.*;
 
 public class MyAnnotationConfigApplicationContext implements MyApplicationContext {
     private Map<String, Object> beanMap = new HashMap<String, Object>();
+    //BeanDefinition
     //private Map<String, Class> classMap = new HashMap<String, Class>();
 
     public MyAnnotationConfigApplicationContext(Class<?>... componentClasses) {
@@ -42,11 +43,12 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
                 }
             }
             //处理@MyBean的情况
+            // cl->  MyAppConfig对象.class
             Object obj = cl.newInstance();    // obj就是当前解析的  MyAppConfig对象
             handleAtMyBean(cl, obj);
             //处理   basePackages 基础包下的所有的托管bean
             for (String basePackage : basePackages) {
-                scanPackageAndSubPackageClasses(basePackage);
+                scanPackageAndSubPackageClasses(basePackage);   //扫描所有的包，及子包中的bean
             }
             //继续其它托管bean
             handleManagedBean();
@@ -75,7 +77,6 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
             for (Field field : fs) {
                 if (field.isAnnotationPresent(MyAutowired.class)) {
 
-
                 } else if (field.isAnnotationPresent(MyResource.class)) {
 
                 }
@@ -101,6 +102,7 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
 
     private void invokeAutowiredMethod(Method m, Object obj) throws InvocationTargetException, IllegalAccessException {
         //1. 取出  m的参数的类型
+        //  StudentDao接口类型
         Class typeClass = m.getParameterTypes()[0];
         //2. 从beanMap中循环所有的object,
         Set<String> keys = beanMap.keySet();
@@ -109,9 +111,9 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
             Object o = beanMap.get(key);
             //3. 判断 这些object 是否为   参数类型的实例  instanceof
             Class[] interfaces = o.getClass().getInterfaces();
-            for(Class c :interfaces){
-                System.out.println(c.getName()+"\t"+typeClass);
-                if (o.getClass().getName().equalsIgnoreCase(typeClass.getName())) {
+            for (Class c : interfaces) {
+                System.out.println(c.getName() + "\t" + typeClass);
+                if (c == typeClass) {
                     //5. invoke
                     m.invoke(obj, o);
                     break;
@@ -152,6 +154,7 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
      */
     private void scanPackageAndSubPackageClasses(String basePackage) throws IOException, ClassNotFoundException {
         String packagePath = basePackage.replaceAll("\\.", "/");
+        //Class.forName("com.yc.bean.xxx")
         System.out.println("扫描包路径:" + basePackage + ",替换后:" + packagePath);   //  com.yc.bean  ->   com/yc/bean
         Enumeration<URL> files = Thread.currentThread().getContextClassLoader().getResources(packagePath);
         while (files.hasMoreElements()) {
@@ -192,6 +195,7 @@ public class MyAnnotationConfigApplicationContext implements MyApplicationContex
                 URL[] urls = new URL[]{};
                 URLClassLoader ucl = new URLClassLoader(urls);
                 //   com.yc.bean.Hello.class  ->   com.yc.bean.Hello
+                //  Class.forName()相似
                 Class c = ucl.loadClass(basePackage + "." + cf.getName().replace(".class", ""));
                 managedBeanClasses.add(c);
             }
