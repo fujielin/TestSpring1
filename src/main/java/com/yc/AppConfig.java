@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @create: 2021-04-04 15:42
  */
 @Configuration
-@ComponentScan(basePackages="com.yc")
+@ComponentScan(basePackages = "com.yc")
 public class AppConfig {//Java容器的配置
 
 

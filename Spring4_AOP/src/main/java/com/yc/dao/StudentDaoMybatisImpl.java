@@ -26,7 +26,7 @@ public class StudentDaoMybatisImpl implements StudentDao {
 
     @Override
     public String find(String name) {
-        System.out.println("MyBatis查找："+name);
+        System.out.println("MyBatis查找：" + name);
         return name;
     }
 }

@@ -14,7 +14,8 @@
         <module>spring3_myspringframework</module>
         <module>Spring4_AOP</module>
         <module>Spring5_self_jdkproxy</module>
-        <module>Spring6_selfaop_chlibproxy</module>
+        <module>Spring6_selfaop_cglibproxy</module>
+        <module>Spring7_tx</module>
     </modules>
 
     <properties>
@@ -78,11 +79,15 @@
                 <artifactId>javax.inject</artifactId>
                 <version>1</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+                <scope>provided</scope>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
-
-
 
 
 </project>

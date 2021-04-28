@@ -15,7 +15,7 @@ public class StudentDaoTest extends TestCase {
     private StudentBizImpl studentBizImpl;
 
     @Override
-    public void setUp() throws Exception{
+    public void setUp() throws Exception {
 
         studentDao = new StudentDaoJpaImpl();
 
@@ -27,13 +27,15 @@ public class StudentDaoTest extends TestCase {
     }
 
 
-    public void testAdd(){
+    public void testAdd() {
         studentDao.add("zhangsan");
     }
-    public void testUpdate(){
+
+    public void testUpdate() {
         studentDao.update("zhangsan");
     }
-    public void testBizAdd(){
+
+    public void testBizAdd() {
         studentBizImpl.add("zhangsan");
     }
 

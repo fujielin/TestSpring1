@@ -1,0 +1,9 @@
+2021-04-28 19:05:55.161  INFO 6704 --- [restartedMain] com.yc.SpringbootBankApplication         : Starting SpringbootBankApplication using Java 1.8.0_65 on DESKTOP-MVG8BHA with PID 6704 (F:\Spring\testSpring\mybank\target\classes started by 455 in F:\Spring\testSpring)
+2021-04-28 19:05:55.214  INFO 6704 --- [restartedMain] com.yc.SpringbootBankApplication         : No active profile set, falling back to default profiles: default
+2021-04-28 19:06:18.040  INFO 6704 --- [restartedMain] com.yc.SpringbootBankApplication         : Started SpringbootBankApplication in 28.554 seconds (JVM running for 52.809)
+2021-04-28 19:58:15.778  INFO 6704 --- [restartedMain] com.yc.SpringbootBankApplication         : Starting SpringbootBankApplication using Java 1.8.0_65 on DESKTOP-MVG8BHA with PID 6704 (F:\Spring\testSpring\mybank\target\classes started by 455 in F:\Spring\testSpring)
+2021-04-28 19:58:15.779  INFO 6704 --- [restartedMain] com.yc.SpringbootBankApplication         : No active profile set, falling back to default profiles: default
+2021-04-28 19:58:24.091  INFO 6704 --- [restartedMain] com.yc.SpringbootBankApplication         : Started SpringbootBankApplication in 8.391 seconds (JVM running for 3178.568)
+2021-04-28 19:58:37.125  INFO 6704 --- [restartedMain] com.yc.SpringbootBankApplication         : Starting SpringbootBankApplication using Java 1.8.0_65 on DESKTOP-MVG8BHA with PID 6704 (F:\Spring\testSpring\mybank\target\classes started by 455 in F:\Spring\testSpring)
+2021-04-28 19:58:37.125  INFO 6704 --- [restartedMain] com.yc.SpringbootBankApplication         : No active profile set, falling back to default profiles: default
+2021-04-28 19:58:38.353  INFO 6704 --- [restartedMain] com.yc.SpringbootBankApplication         : Started SpringbootBankApplication in 1.332 seconds (JVM running for 3192.83)

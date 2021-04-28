@@ -30,27 +30,28 @@ public class LogAspect {
         Object retVal = pjp.proceed();//目标类的目标方法
         long end = System.currentTimeMillis();
         System.out.println("compute要退出增强了");
-        System.out.println("这个方法运行时长为："+(end-start));
+        System.out.println("这个方法运行时长为：" + (end - start));
         return retVal;
     }
 
     //切入点的声明  pointcut signature
     @Pointcut("execution(* com.yc.biz.StudentBizImpl.add(..))")// the pointcut expression(切入点表达式)：哪些方法上增强
-    private void add(){
+    private void add() {
 
     }
 
     @Pointcut("execution(* com.yc.biz.StudentBizImpl.update(..))")// the pointcut expression(切入点表达式)：哪些方法上增强
-    private void update(){
+    private void update() {
 
     }
 
     @Pointcut("execution(* com.yc.biz.StudentBizImpl.find(..))")// the pointcut expression(切入点表达式)：哪些方法上增强
-    private void find(){
+    private void find() {
 
     }
+
     @Pointcut("add()||update()||find()")
-    private void addAndUpdateAndFind(){
+    private void addAndUpdateAndFind() {
 
     }
 

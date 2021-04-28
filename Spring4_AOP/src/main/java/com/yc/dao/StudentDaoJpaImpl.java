@@ -27,7 +27,7 @@ public class StudentDaoJpaImpl implements StudentDao {
 
     @Override
     public String find(String name) {
-        System.out.println("jpa查找："+name);
+        System.out.println("jpa查找：" + name);
         return name;
     }
 }

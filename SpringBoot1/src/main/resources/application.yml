@@ -1,0 +1,12 @@
+server:
+  port: 8081
+  session.timeout: 60000
+  servlet.contextpath: /baidu
+logging:
+  level: debug
+  com.yc: debug
+  org.springframework: debug
+
+file:
+  path: ./logs
+  name: ycsss.log

@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = MyAppConfig.class)
-public class StudentBizImplTest  {
+public class StudentBizImplTest {
     @Autowired
     //@Resource(name = "studentBizImpl")
     private StudentBiz sbi;

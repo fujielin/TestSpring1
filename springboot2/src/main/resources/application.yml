@@ -1,0 +1,10 @@
+server:
+  port: 8081
+logging:
+  level:
+    root: debug
+    com.yc: debug
+    org.springframework: debug
+  file:
+    path: ./logs
+    name: ycsss.log

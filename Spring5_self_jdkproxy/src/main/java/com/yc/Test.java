@@ -17,7 +17,7 @@ public class Test {
 
         Object obj = la.createProxy();//obj就是代理对象
 
-        if (obj instanceof StudentBiz){
+        if (obj instanceof StudentBiz) {
             StudentBiz sb = (StudentBiz) obj;
             sb.find("张三");  //jvm 会感到这个sb是一个proxy jvm就调用这个proxy中的invoke。
             sb.add("李四");
